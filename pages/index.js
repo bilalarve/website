@@ -75,9 +75,60 @@ export default function Home() {
             />
           </div>
         </div>
+
+        {/* SPLIT */}
+
+        <Services />
       </main>
 
       <Footer />
+    </div>
+  );
+}
+
+function Services() {
+  const Card = ({ title, description, backgroundColor, src }) => (
+    <div className="flex flex-1 flex-col items-center gap-11 rounded-[20px] border border-main-gray/25 bg-main-dark-blue px-14 pt-14 pb-20">
+      <div
+        className={`flex-center h-[116px] w-[116px] rounded-xl ${backgroundColor}`}
+      >
+        <Image src={src} alt={title} width={60} height={60} />
+      </div>
+      <h6 className="text-2xl font-bold text-white">{title}</h6>
+      <p className="text-center text-base font-medium text-main-gray">
+        {description}
+      </p>
+    </div>
+  );
+
+  return (
+    <div>
+      <div className="wrapper rounded-[20px] bg-main-dark-blue px-36 py-24">
+        <p className="mb-3.5 text-xs font-bold tracking-[8px] text-main-gray">
+          SERVICES
+        </p>
+        <h4 className="mb-10 text-5xl font-bold text-white">What can i do?</h4>
+        <div className="flex gap-[22px]">
+          <Card
+            title="Illustration"
+            description="Flat illustration, Isometric, Mascot, Icon Set, Character Design, Illustration Set"
+            backgroundColor="bg-main-pink"
+            src="/icon/illustration.svg"
+          />
+          <Card
+            title="UI UX Design"
+            description="Wireframing, User Flow, Landing Pages, Mobile and Web Design app"
+            backgroundColor="bg-main-purple"
+            src="/icon/ui-ux.svg"
+          />
+          <Card
+            title="Graphic Design"
+            description="Visual Identity, Poster, Stationary, Social Media, Infographics"
+            backgroundColor="bg-main-cyan"
+            src="/icon/graphic-design.svg"
+          />
+        </div>
+      </div>
     </div>
   );
 }
