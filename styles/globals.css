@@ -5,7 +5,18 @@
 @tailwind utilities;
 
 @layer components {
+  /* Global */
   body {
     @apply font-body;
   }
+
+  /* Start custom class */
+  .wrapper {
+    @apply max-w-8xl mx-auto;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  /* End custom class */
 }
