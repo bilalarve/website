@@ -154,10 +154,10 @@ function Projects() {
         <div className="grid grid-cols-12 gap-5">
           <div className="col-span-11 col-start-2 mb-10">
             <p className="mb-3.5 text-xs font-bold tracking-[8px] text-main-gray">
-              SERVICES
+              WORKS
             </p>
             <h4 className="text-5xl font-bold text-main-dark-blue">
-              What can i do?
+              Features Projects
             </h4>
           </div>
         </div>
