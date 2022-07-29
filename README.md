@@ -1,7 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ### TODO:
+
 - Apply this [autosort props](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md)
+- change img to image at projectView
+- make into responsive
+- fix bug on projectView page that why using a lot of `?`
+- create modal for contact me
+- make filter on `projects` working
 
 ## Getting Started
 
