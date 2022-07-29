@@ -40,7 +40,7 @@ function Hero() {
           Hello! I Am
           <br />
           Bilal Arve.
-          <br />I Am an Illustrator
+          <br />I Am an UI/UX Design
         </h1>
         <p className="mb-[50px] max-w-[466px] text-base leading-relaxed text-main-gray">
           Hey Im Muhammad Bilal Arve and i’m from Indonesia.I have been working
