@@ -6,6 +6,7 @@ import Button from "../components/Button";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import ProjectCard from "../components/ProjectCard";
 
 export default function Home() {
   return (
@@ -145,46 +146,8 @@ function Services() {
   );
 }
 
+import { projects } from "./api/projects";
 function Projects() {
-  const data = [
-    {
-      name: "Weather App",
-      src: "/projects/weather-app.png",
-      category: "UI/UX Design",
-      url: "",
-    },
-    {
-      name: "KRL Access",
-      src: "/projects/krl-access-app.png",
-      category: "UI/UX Design",
-      url: "",
-    },
-    {
-      name: "Podcast App",
-      src: "/projects/podcast-app.png",
-      category: "UI/UX Design",
-      url: "",
-    },
-    {
-      name: "Enjoying Illustration",
-      src: "/projects/enjoying-llustration.png",
-      category: "Illustration",
-      url: "",
-    },
-    {
-      name: "Cleaning App",
-      src: "/projects/cleaning-app.png",
-      category: "UI/UX Design",
-      url: "",
-    },
-    {
-      name: "Enjoy Working",
-      src: "/projects/enjoy-working.png",
-      category: "Illustration",
-      url: "",
-    },
-  ];
-
   return (
     <div className="mt-40">
       <div className="wrapper">
@@ -200,25 +163,8 @@ function Projects() {
         </div>
 
         <div className="mb-16 grid grid-cols-2 gap-5">
-          {data.map((item) => (
-            <div
-              className="group relative h-[432px] w-full overflow-hidden rounded-[20px]"
-              key={item.name}
-            >
-              <div className="flex-center invisible absolute inset-0 z-10 flex-col gap-7 bg-gradient-to-bl from-[#403f63a5] to-[#0c0c20cc]  group-hover:visible">
-                <h5 className="text-2xl font-bold text-white">{item.name}</h5>
-                <h6 className="text-base font-semibold text-white">
-                  {item.category}
-                </h6>
-                <Button text="View Project" theme="transparent-white" />
-              </div>
-              <Image
-                className="h-full w-full object-cover"
-                src={item.src}
-                alt={item.name}
-                layout="fill"
-              />
-            </div>
+          {projects.map((item) => (
+            <ProjectCard item={item} key={item.name} />
           ))}
         </div>
 

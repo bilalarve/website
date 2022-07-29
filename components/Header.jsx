@@ -15,7 +15,7 @@ export default function Header() {
         </Link>
         <nav className="flex gap-[50px]">
           <NavLink href="/">Home</NavLink>
-          <NavLink href="/">Projects</NavLink>
+          <NavLink href="/projects">Projects</NavLink>
           <NavLink
             href="https://drive.google.com/file/d/1EaHugga84FH1iE2-y__aTKJAapssMG_e/view?usp=sharing"
             passHref={true}
