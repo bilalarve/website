@@ -199,7 +199,7 @@ function Projects() {
         <div className="grid grid-cols-2 gap-5">
           {data.map((item) => (
             <div
-              className="group relative h-[432px] w-full overflow-hidden rounded-[20px] bg-red-500"
+              className="group relative h-[432px] w-full overflow-hidden rounded-[20px]"
               key={item.name}
             >
               <div className="flex-center invisible absolute inset-0 z-10 flex-col gap-7 bg-gradient-to-bl from-[#403f63a5] to-[#0c0c20cc]  group-hover:visible">
