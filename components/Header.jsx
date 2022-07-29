@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { HiChat } from "react-icons/hi";
+import Button from "./Button";
 
 export default function Header() {
   return (
@@ -15,21 +16,27 @@ export default function Header() {
         <nav className="flex gap-[50px]">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/">Projects</NavLink>
-          <NavLink href="/">Resume</NavLink>
+          <NavLink
+            href="https://drive.google.com/file/d/1EaHugga84FH1iE2-y__aTKJAapssMG_e/view?usp=sharing"
+            passHref={true}
+            target="_blank"
+          >
+            Resume
+          </NavLink>
         </nav>
-        <button className="flex h-[42px] items-center gap-2.5 rounded-full border border-main-dark-blue bg-white px-6 text-main-dark-blue transition-colors hover:bg-main-dark-blue hover:text-white">
-          <span className="text-sm font-semibold">Contact Me</span>
-          <HiChat />
-        </button>
+        <Button text="Contact Me" theme="border-dark-blue" icon={<HiChat />} />
       </div>
     </header>
   );
 }
 
-function NavLink({ href, children }) {
+function NavLink({ href, children, target = "", props }) {
   return (
-    <Link href={href}>
-      <a className="text-sm font-semibold text-main-gray transition-colors hover:text-main-dark-blue">
+    <Link href={href} {...props}>
+      <a
+        className="text-sm font-semibold text-main-gray transition-colors hover:text-main-dark-blue"
+        target={target}
+      >
         {children}
       </a>
     </Link>
