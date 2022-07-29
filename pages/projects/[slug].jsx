@@ -13,14 +13,7 @@ import Button from "../../components/Button";
 import { projects } from "../api/projects";
 
 export default function ProjectView() {
-  const [project, setProject] = useState({
-    name: "",
-    description: "",
-    data: {
-      figma: "",
-      images: [],
-    },
-  });
+  const [project, setProject] = useState({});
 
   const router = useRouter();
 
@@ -52,11 +45,11 @@ export default function ProjectView() {
 
           <iframe
             className="aspect-video w-full"
-            src={project?.data.figma}
+            src={project?.data?.figma}
             allowFullScreen
           ></iframe>
           <div>
-            {project?.data.images.map((image) => (
+            {project?.data?.images.map((image) => (
               <div key={image}>
                 <img
                   className="h-full w-full object-contain"
