@@ -3,7 +3,7 @@ const projects = [
     name: "KRL Access",
     slug: "krl-access",
     category: "UI/UX Design",
-    image: "weather-app.png",
+    image: "krl-access-app.png",
     description:
       "Hey Im Muhammad Bilal Arve and i’m from Indonesia.I have been working as an Illustrator and Graphic Designer with more than 3 years of experience and UI UX Designer for 1 years and still learning and exploring.Hey Im Muhammad Bilal Arve and i’m from Indonesia.I have been working as an Illustrator and Graphic Designer with more than 3 years of experience and UI UX Designer for 1 years and still learning and exploring.",
     featured: true,
