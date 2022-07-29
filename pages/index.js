@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { HiChat, HiClipboardList } from "react-icons/hi";
+import { HiChat, HiChevronRight, HiClipboardList } from "react-icons/hi";
 import Button from "../components/Button";
 
 import Footer from "../components/Footer";
@@ -39,9 +39,6 @@ function Hero() {
           <br />
           Bilal Arve.
           <br />I Am an Illustrator
-          {/* <span className="rounded-full bg-main-purple py-3 px-6 text-2xl font-bold text-white">
-                Illustrator
-              </span> */}
         </h1>
         <p className="mb-[50px] max-w-[466px] text-base leading-relaxed text-main-gray">
           Hey Im Muhammad Bilal Arve and i’m from Indonesia.I have been working
@@ -55,6 +52,12 @@ function Hero() {
             text="Resume"
             theme="border-dark-blue"
             icon={<HiClipboardList />}
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1EaHugga84FH1iE2-y__aTKJAapssMG_e/view?usp=sharing",
+                "_blank"
+              )
+            }
           />
         </div>
         <div className="flex gap-6">
@@ -196,7 +199,7 @@ function Projects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-5">
+        <div className="mb-16 grid grid-cols-2 gap-5">
           {data.map((item) => (
             <div
               className="group relative h-[432px] w-full overflow-hidden rounded-[20px]"
@@ -218,6 +221,14 @@ function Projects() {
             </div>
           ))}
         </div>
+
+        <div className="flex justify-center">
+          <Button
+            text="View More"
+            theme="fill-blue"
+            icon={<HiChevronRight />}
+          />
+        </div>
       </div>
     </div>
   );
@@ -225,7 +236,7 @@ function Projects() {
 
 function CTA() {
   return (
-    <div className="mt-80 mb-[140px]">
+    <div className="mt-[120px] mb-20">
       <div className="wrapper relative overflow-hidden rounded-[20px] bg-main-dark-blue">
         <div className="py-24 px-[120px]">
           <h2 className="mb-10 text-5xl font-bold text-white">
