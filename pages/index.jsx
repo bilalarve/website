@@ -2,11 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { HiChat, HiChevronRight, HiClipboardList } from "react-icons/hi";
-import Button from "../components/Button";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProjectCard from "../components/ProjectCard";
+import Button from "../components/Button";
+import ButtonLink from "../components/ButtonLink";
 
 export default function Home() {
   return (
@@ -49,16 +50,13 @@ function Hero() {
         </p>
         <div className="mb-14 flex gap-[34px]">
           <Button text="Lets Talk" theme="fill-blue" icon={<HiChat />} />
-          <Button
+          <ButtonLink
             text="Resume"
             theme="border-dark-blue"
             icon={<HiClipboardList />}
-            onClick={() =>
-              window.open(
-                "https://drive.google.com/file/d/1EaHugga84FH1iE2-y__aTKJAapssMG_e/view?usp=sharing",
-                "_blank"
-              )
-            }
+            href="https://drive.google.com/file/d/1EaHugga84FH1iE2-y__aTKJAapssMG_e/view?usp=sharing"
+            passHref={true}
+            target="_blank"
           />
         </div>
         <div className="flex gap-6">
@@ -163,16 +161,19 @@ function Projects() {
         </div>
 
         <div className="mb-16 grid grid-cols-2 gap-5">
-          {projects.map((item) => (
-            <ProjectCard item={item} key={item.name} />
-          ))}
+          {projects
+            .filter((project) => project.featured)
+            .map((project) => (
+              <ProjectCard item={project} key={project.slug} />
+            ))}
         </div>
 
         <div className="flex justify-center">
-          <Button
+          <ButtonLink
             text="View More"
             theme="fill-blue"
             icon={<HiChevronRight />}
+            href="projects"
           />
         </div>
       </div>

@@ -1,15 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../components/Button";
 
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import ProjectCard from "../components/ProjectCard";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import Button from "../../components/Button";
+import ProjectCard from "../../components/ProjectCard";
 
-import { projects } from "./api/projects";
-
-export default function Home() {
+export default function Home({ projects }) {
   return (
     <div>
       <Head>
@@ -48,4 +46,13 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+import { projects } from "../api/projects";
+export async function getStaticProps() {
+  return {
+    props: {
+      projects,
+    },
+  };
 }
