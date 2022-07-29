@@ -32,14 +32,21 @@ const projects = [
     src: "/projects/cleaning-app.png",
     category: "UI/UX Design",
     url: "",
-    featured: false,
+    featured: true,
   },
   {
     name: "Enjoy Working",
     src: "/projects/enjoy-working.png",
     category: "Illustration",
     url: "",
-    featured: false,
+    featured: true,
+  },
+    {
+    name: "Walking in the junggle",
+    src: "/projects/walkinthejunggle.png",
+    category: "Illustration",
+    url: "",
+    featured: true,
   },
 ];
 
