@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,10 +13,21 @@ import Button from "../../components/Button";
 import { projects } from "../api/projects";
 
 export default function ProjectView() {
+  const [project, setProject] = useState({
+    name: "",
+    description: "",
+    data: {
+      figma: "",
+      images: [],
+    },
+  });
+
   const router = useRouter();
-  const { slug } = router.query;
-  const project = projects.find((el) => el.slug === slug);
-  console.log(project);
+
+  useEffect(() => {
+    const { slug } = router.query;
+    setProject(projects.find((el) => el.slug === slug));
+  }, [router.query]);
 
   return (
     <div>
@@ -31,20 +43,20 @@ export default function ProjectView() {
         <div className="wrapper mt-52 mb-36">
           <div className="mb-14 grid grid-cols-12 gap-5">
             <h2 className="col-span-5 col-start-2 text-5xl font-bold text-main-dark-blue">
-              {project.name}
+              {project?.name}
             </h2>
             <p className="col-span-5 text-base text-main-gray">
-              {project.description}
+              {project?.description}
             </p>
           </div>
 
           <iframe
             className="aspect-video w-full"
-            src={project.data.figma}
+            src={project?.data.figma}
             allowFullScreen
           ></iframe>
           <div>
-            {project.data.images.map((image) => (
+            {project?.data.images.map((image) => (
               <div key={image}>
                 <img
                   className="h-full w-full object-contain"
