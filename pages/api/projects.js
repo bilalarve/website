@@ -18,7 +18,7 @@ const projects = [
     src: "/projects/podcast-app.png",
     category: "UI/UX Design",
     url: "",
-    featured: true,
+    featured: false,
   },
   {
     name: "Enjoying Illustration",
